@@ -10,13 +10,13 @@ export default function AppLayout() {
             <div className="all_page">
 
                 <AppHeader />
-                <main className="container">
-
-                    <Outlet />
 
 
+                <Outlet />
 
-                </main>
+
+
+
                 <AppFooter />
             </div>
         </>

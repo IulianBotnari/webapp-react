@@ -12,13 +12,18 @@ function App() {
     <>
       <GlobalContext>
         <BrowserRouter>
-          <AppLayout>
-            <Routes>
+
+          <Routes>
+            <Route element={<AppLayout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/FilmDetails" element={<FilmDetails />} />
+              <Route path="/:id" element={<FilmDetails />} />
               {/* <Route path="*" element={<PageNotFound />} /> */}
-            </Routes>
-          </AppLayout>
+
+            </Route>
+
+
+          </Routes>
+
         </BrowserRouter>
 
       </GlobalContext>
