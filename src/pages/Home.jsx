@@ -37,8 +37,9 @@ export default function AppHome() {
                             {/* <li className="list-group-item">Aggiunto: {film.created_at}</li>
                         <li className="list-group-item">Aggiornato: {film.updated_at}</li> */}
                         </ul>
-                        <div className="card-body">
-                            <button className="btn btn-primary" value={film.id} onClick={(e) => handleClick(e, film.id)}>Leggi recensioni</button>
+                        <div className="card-body d-flex">
+                            <button className="btn btn-primary m-2" value={film.id} onClick={(e) => handleClick(e, film.id)}>Leggi recensioni</button>
+                            <button className="btn btn-primary m-2" value={film.id} onClick={(e) => handleClick(e, film.id)}>Lascia una recensione</button>
                         </div>
                     </div>
 
