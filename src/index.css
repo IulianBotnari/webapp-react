@@ -40,6 +40,11 @@ a {
     color: white !important;
 }
 
+.form {
+    height: 100%;
+
+
+}
 
 .reviews {
     width: 90%;
