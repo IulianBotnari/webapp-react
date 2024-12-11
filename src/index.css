@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 4rem;
+}
+
+.all_page {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2rem;
+    justify-content: space-between;
+
+    p {
+        display: flex;
+
+        margin: 0 2rem !important;
+    }
+
+    a {
+        margin: 0 1rem;
+    }
+
+}
+
+a {
+    text-decoration: none !important;
+    color: white !important;
+}
