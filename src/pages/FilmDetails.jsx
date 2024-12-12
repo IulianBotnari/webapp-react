@@ -10,8 +10,16 @@ export default function AppFilmDetails() {
     const [vote, setVote] = useState("")
     const [name, setName] = useState("")
     const [reviewsById, setReviewsById] = useState([])
+    const [filmTitleById, setFilmTitleById] = useState("")
     const navigate = useNavigate()
     const { id } = useParams()
+    console.log(films.data);
+
+
+
+
+    console.log(filmTitleById);
+
 
     useEffect(() => {
         setFilmId(id)
@@ -24,6 +32,7 @@ export default function AppFilmDetails() {
             const response = await fetch(`http://localhost:3000/${id}`)
             const data = await response.json()
 
+            setFilmTitleById(data)
             setReviewsById(data.reviews)
 
         }
@@ -69,25 +78,28 @@ export default function AppFilmDetails() {
 
 
             <div className="reviews">
-                {filmTitle ? <h1>{filmTitle}</h1> : <h1>{films[id - 1].title}</h1>}
-                {reviews?.map((review, index) => (
-                    <div className="card" key={index}>
-                        <h5 className="card-header">Utente: {review.name}</h5>
-                        <div className="card-body">
-                            <h5 className="card-title">Voto: {review.vote}</h5>
-                            <p className="card-text">Recensione: {review.text}</p>
-
+                <h1>{filmTitleById.title}</h1>
+                {reviews?.length > 0 ? (
+                    reviews.map((review, index) => (
+                        <div className="card" key={index}>
+                            <h5 className="card-header">Utente: {review.name}</h5>
+                            <div className="card-body">
+                                <h5 className="card-title">Voto: {review.vote}</h5>
+                                <p className="card-text">Recensione: {review.text}</p>
+                            </div>
                         </div>
-                    </div>))}
-                {reviewsById.map((review, index) => (
-                    <div className="card" key={index}>
-                        <h5 className="card-header">Utente: {review.name}</h5>
-                        <div className="card-body">
-                            <h5 className="card-title">Voto: {review.vote}</h5>
-                            <p className="card-text">Recensione: {review.text}</p>
-
+                    ))
+                ) : (
+                    reviewsById.map((review, index) => (
+                        <div className="card" key={index}>
+                            <h5 className="card-header">Utente: {review.name}</h5>
+                            <div className="card-body">
+                                <h5 className="card-title">Voto: {review.vote}</h5>
+                                <p className="card-text">Recensione: {review.text}</p>
+                            </div>
                         </div>
-                    </div>))}
+                    ))
+                )}
 
 
 

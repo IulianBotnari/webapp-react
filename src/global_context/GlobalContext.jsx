@@ -8,6 +8,7 @@ export function GlobalContext({ children }) {
     const [films, setFilms] = useState([])
     const [reviews, setReviews] = useState([])
     const [filmTitle, setFilmTitle] = useState('')
+
     console.log(reviews);
 
 
