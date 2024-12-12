@@ -3,7 +3,7 @@ import AppLayout from "./components/Layout"
 import { BrowserRouter, Routes, Route } from "react-router"
 import Home from "./pages/Home"
 import FilmDetails from "./pages/FilmDetails"
-import FormPage from "./pages/Form"
+
 // import PageNotFound from "./pages/PageNotFound"
 
 
@@ -20,7 +20,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/:id" element={<FilmDetails />} />
               {/* <Route path="*" element={<PageNotFound />} /> */}
-              <Route path="/form-page" element={<FormPage />} />
+
 
             </Route>
 

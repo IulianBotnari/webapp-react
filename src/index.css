@@ -8,6 +8,13 @@
     width: 4rem;
 }
 
+
+header {
+    background-color: thistle;
+
+}
+
+
 .all_page {
     display: flex;
     height: 100vh;
@@ -49,4 +56,16 @@ a {
 .reviews {
     width: 90%;
     margin: auto;
+}
+
+
+
+
+.agu-display-title-font {
+    font-family: "Agu Display";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "MORF" 13;
 }

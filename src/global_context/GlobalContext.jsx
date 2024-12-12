@@ -9,9 +9,6 @@ export function GlobalContext({ children }) {
     const [reviews, setReviews] = useState([])
     const [filmTitle, setFilmTitle] = useState('')
 
-    console.log(reviews);
-
-
     async function getReviews(id) {
         try {
             const response = await fetch(`http://localhost:3000/${id}`)
