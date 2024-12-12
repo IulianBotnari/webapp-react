@@ -5,33 +5,34 @@ import Home from "./pages/Home"
 import FilmDetails from "./pages/FilmDetails"
 import FormPage from "./pages/Form"
 // import PageNotFound from "./pages/PageNotFound"
+import
 
-function App() {
-
-
-  return (
-    <>
-      <GlobalContext>
-        <BrowserRouter>
-
-          <Routes>
-            <Route element={<AppLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/:id" element={<FilmDetails />} />
-              {/* <Route path="*" element={<PageNotFound />} /> */}
-              <Route path="/form-page" element={<FormPage />} />
-
-            </Route>
+  function App() {
 
 
-          </Routes>
+    return (
+      <>
+        <GlobalContext>
+          <BrowserRouter>
 
-        </BrowserRouter>
+            <Routes>
+              <Route element={<AppLayout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/:id" element={<FilmDetails />} />
+                {/* <Route path="*" element={<PageNotFound />} /> */}
+                <Route path="/form-page" element={<FormPage />} />
 
-      </GlobalContext>
+              </Route>
 
-    </>
-  )
-}
+
+            </Routes>
+
+          </BrowserRouter>
+
+        </GlobalContext>
+
+      </>
+    )
+  }
 
 export default App

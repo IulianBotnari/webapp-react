@@ -17,6 +17,8 @@ export default function AppHome() {
     }
 
 
+
+
     return (
         <>
 
@@ -39,7 +41,7 @@ export default function AppHome() {
                         </ul>
                         <div className="card-body d-flex">
                             <button className="btn btn-primary m-2" value={film.id} onClick={(e) => handleClick(e, film.id)}>Leggi recensioni</button>
-                            <button className="btn btn-primary m-2" value={film.id} onClick={(e) => handleClick(e, film.id)}>Lascia una recensione</button>
+
                         </div>
                     </div>
 
