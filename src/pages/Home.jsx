@@ -5,8 +5,6 @@ export default function AppHome() {
     const { films, getReviews } = useGlobalContext()
     const navigate = useNavigate()
 
-    console.log(films);
-
     function handleClick(e, filmId) {
         e.preventDefault()
 
@@ -39,7 +37,7 @@ export default function AppHome() {
                             {/* <li className="list-group-item">Aggiunto: {film.created_at}</li>
                         <li className="list-group-item">Aggiornato: {film.updated_at}</li> */}
                         </ul>
-                        <div className="card-body d-flex">
+                        <div className="card-body d-flex justify-content-center">
                             <button className="btn btn-primary m-2" value={film.id} onClick={(e) => handleClick(e, film.id)}>Leggi recensioni</button>
 
                         </div>

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from "react-router"
 
 export default function AppFilmDetails() {
-    const { reviews, films } = useGlobalContext()
+    const { reviews } = useGlobalContext()
     const [filmId, setFilmId] = useState("")
     const [text, setText] = useState("")
     const [vote, setVote] = useState("")
@@ -84,7 +84,7 @@ export default function AppFilmDetails() {
                 <h1>{filmTitleById.title}</h1>
                 {reviews?.length > 0 ? (
                     reviews.map((review, index) => (
-                        <div className="card" key={index}>
+                        <div className="card" style={{ margin: '.5rem 0rem' }} key={index}>
                             <h5 className="card-header">Utente: {review.name}</h5>
                             <div className="card-body">
                                 <h5 className="card-title">Voto: {star(review.vote)}</h5>
@@ -94,7 +94,7 @@ export default function AppFilmDetails() {
                     ))
                 ) : (
                     reviewsById.map((review, index) => (
-                        <div className="card" key={index}>
+                        <div className="card" style={{ margin: '.5rem 0rem' }} key={index}>
                             <h5 className="card-header">Utente: {review.name}</h5>
                             <div className="card-body">
                                 <h5 className="card-title">Voto: {star(review.vote)}</h5>
@@ -136,18 +136,18 @@ export default function AppFilmDetails() {
                                 <label className="visually-hidden" htmlFor="inlineFormInputGroupUsername">Username</label>
                                 <div className="input-group">
                                     <div className="input-group-text">Nome</div>
-                                    <input type="text" className="form-control" id="inlineFormInputGroupUsername" placeholder="Username" value={name} onChange={(e) => setName(e.target.value)} />
+                                    <input type="text" className="form-control" id="inlineFormInputGroupUsername" placeholder="Username" value={name} onChange={(e) => setName(e.target.value)} required />
                                 </div>
                             </div>
 
                             <div className="">
-                                <label htmlFor="floatingTextarea">Recensione</label>
-                                <textarea className="form-control" rows="10" cols="500" placeholder="Leave a comment here" id="floatingTextarea" value={text} onChange={(e) => setText(e.target.value)}></textarea>
+                                <label htmlFor="review">Recensione</label>
+                                <textarea className="form-control" rows="10" cols="500" placeholder="Leave a comment here" id="review" value={text} onChange={(e) => setText(e.target.value)} required></textarea>
                             </div>
 
                             <div className="col-12">
-                                <label className="visually-hidden" htmlFor="inlineFormSelectPref">Preference</label>
-                                <select className="form-select col-4" id="inlineFormSelectPref" onChange={(e) => setVote(e.target.value)}>
+                                <label className="visually-hidden" htmlFor="rating">Preference</label>
+                                <select className="form-select col-4" id="rating" onChange={(e) => setVote(e.target.value)} required>
                                     <option value="" >Dai un voto al film 🌟🌟🌟🌟🌟 </option>
                                     <option value="1">🌟</option>
                                     <option value="2">🌟🌟</option>
