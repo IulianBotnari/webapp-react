@@ -1,11 +1,10 @@
 import { useGlobalContext } from "../global_context/GlobalContext.jsx"
 import { useNavigate } from "react-router";
-import IsLoading from "../components/IsLoading.jsx";
+
 
 export default function AppHome() {
     const { films, getReviews } = useGlobalContext()
     const navigate = useNavigate()
-
 
 
     function handleClick(e, filmId) {
