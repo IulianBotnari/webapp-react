@@ -1,6 +1,7 @@
 import React, { createContext, useContext } from 'react'
 import { useState, useEffect } from "react"
 
+
 const context = createContext()
 
 export function GlobalContext({ children }) {
@@ -8,9 +9,11 @@ export function GlobalContext({ children }) {
     const [films, setFilms] = useState([])
     const [reviews, setReviews] = useState([])
     const [filmTitle, setFilmTitle] = useState('')
+    const [loading, setLoading] = useState(false)
 
     async function getReviews(id) {
         try {
+            setLoading(true)
             const response = await fetch(`http://localhost:3000/${id}`)
             const data = await response.json()
             setFilmTitle(data.title)
@@ -20,12 +23,13 @@ export function GlobalContext({ children }) {
         catch (error) {
             console.error('Error:', error)
         }
-
+        setLoading(false)
 
     }
     async function getFilms() {
 
         try {
+            setLoading(true)
             const response = await fetch('http://localhost:3000')
             const data = await response.json()
 
@@ -34,6 +38,8 @@ export function GlobalContext({ children }) {
         catch (error) {
             console.error('Error:', error)
         }
+
+        setLoading(false)
     }
 
     useEffect(() => {
@@ -46,7 +52,8 @@ export function GlobalContext({ children }) {
         setFilms,
         getReviews,
         reviews,
-        filmTitle
+        filmTitle,
+        loading
 
     }
 

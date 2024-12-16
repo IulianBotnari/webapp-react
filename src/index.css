@@ -68,4 +68,5 @@ a {
     font-style: normal;
     font-variation-settings:
         "MORF" 13;
+    font-display: swap;
 }

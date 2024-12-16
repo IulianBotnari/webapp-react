@@ -1,23 +1,39 @@
 import { Outlet } from "react-router";
 import AppHeader from "./Header";
 import AppFooter from "./Footer";
+import { useGlobalContext } from "../global_context/GlobalContext";
+
 
 
 export default function AppLayout() {
+
+
+    const { loading } = useGlobalContext()
+
 
     return (
         <>
             <div className="all_page">
 
-                <AppHeader />
+                {loading ? <div className="spinner-border text-primary" role="status">
+                    <span className="sr-only">Loading...</span>
+                </div> :
+                    <>
+
+                        <AppHeader />
 
 
-                <Outlet />
+                        <Outlet />
 
 
 
 
-                <AppFooter />
+                        <AppFooter />
+                    </>
+                }
+
+
+
             </div>
         </>
     )
